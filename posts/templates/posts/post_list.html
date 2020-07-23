@@ -1,0 +1,46 @@
+{% extends "posts/post_base.html" %}
+{% load humanize %}
+
+{% block pre_post_content %}
+<div class="col-md-4">
+	{% if request.user.is_authenticated %}
+	<div class="card card-with-shadow">
+		<div class="content">
+			<h5 class="title">Your Groups</h5>
+			<ul class="list-unstyled">
+
+				{% for user_group in user_groups %}
+        {# get_user_groups from group models: GroupMember, related_name='user_groups' #}
+        {# group models, register = template.Library() help to use get_user_groups template tags #}
+				<li class="group li-with-bullet">
+					<a href="{% url 'groups:single' slug=user_group.slug %}">{{ user_group.slug }}</a>
+				</li>
+				{% endfor %}
+
+			</ul>
+		</div>
+	</div>
+	{% endif %}
+	<div class="card card-with-shadow">
+		<div class="content">
+			<h5 class="title">All groups</h5>
+			<ul class="list-unstyled">
+				{# {% get_other_groups as other_groups %} #}
+				{% for other_group in other_groups %}
+        {# 相對除了get_user_groups 的其他groups, 這種語法other是預設的 #}
+					<li class="group li-with-bullet"><a href="{% url 'groups:single' slug=other_group.slug %}">{{ other_group.name }}</a></li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block post_content %}
+<div class="col-md-8">
+	{% for post in post_list %}
+  {# post_list: ListView default context tag name #}
+  {% include "posts/_post.html" %}
+	{% endfor %}
+</div>
+{% endblock %}
