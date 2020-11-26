@@ -19,7 +19,7 @@ I'm happy to accept more configurability and features. PR welcome! What you see 
 
 #### Publish Post
 
-<img src="https://github.com/CCTSAI-Tony/emaily/blob/master/post.png" width="532">
+<img src="https://github.com/CCTSAI-Tony/simplesocial/blob/master/post.png" width="532">
 
 ## To run web server locally, run the following commands.
 
