@@ -1,5 +1,5 @@
 <div align="center">
-	<img width="900" src="https://github.com/CCTSAI-Tony/simplesocial/blob/master/logo.png" alt="emaily">
+	<img width="900" src="https://github.com/CCTSAI-Tony/simplesocial/blob/master/logo.png" alt="simplesocial">
 	<br>
 </div>
 
